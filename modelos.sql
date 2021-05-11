@@ -73,3 +73,18 @@ select carga, count(*) from cursos where ano > 2015 group by carga having carga 
 
 
 select totaulas from cursos order by totaulas;
+
+ select * from gafanhotos;
+ 
+ select profissao, count(*) from gafanhotos group by profissao order by count(*) desc;
+ 
+ select altura  from gafanhotos where peso > 100;
+ 
+ select sexo, nascimento, count(*) from gafanhotos where nascimento > '2005-01-01'  group by sexo;
+ 
+ select nacionalidade,count(*) from gafanhotos where nacionalidade !='brasil' group by nacionalidade having count(*) >3 order by nacionalidade desc;
+ 
+ select altura, peso, count(*) from gafanhotos where peso > 100 and  altura >  (select avg(altura) from gafanhotos) group by altura order by altura desc;
+ 
+ select altura, count(*) from gafanhotos where peso > 100 and altura > (select avg(altura) from gafanhotos) group by altura order by altura;
+
